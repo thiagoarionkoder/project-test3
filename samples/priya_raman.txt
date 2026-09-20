@@ -1,0 +1,18 @@
+Priya Raman
+priya.raman@example.com
+
+Profile
+A results-driven and detail-oriented data analyst, passionate about technology
+and a genuine team player looking for the next challenge.
+
+Experience
+Data Analyst, Brightline Retail, 2023 - 2024
+- Responsible for weekly sales reporting.
+- Worked with stakeholders on dashboard requirements.
+- Helped the team with ad hoc data requests.
+
+Intern, Brightline Retail, 2022 - 2023
+- Assisted with data entry and spreadsheet clean-up.
+
+Skills
+Excel, SQL, Tableau, Power BI, Python, pandas.

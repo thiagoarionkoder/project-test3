@@ -1,0 +1,127 @@
+{
+  "version": "1.3",
+  "categories": {
+    "languages": {
+      "label": "Programming languages",
+      "target": 3,
+      "weight": 1.3,
+      "skills": {
+        "Python": ["python", "python3"],
+        "JavaScript": ["javascript", "js", "es6"],
+        "TypeScript": ["typescript", "ts"],
+        "Go": ["golang", "go"],
+        "Rust": ["rust"],
+        "Java": ["java"],
+        "C#": ["c#", "csharp"],
+        "C++": ["c++", "cpp"],
+        "Ruby": ["ruby"],
+        "PHP": ["php"],
+        "Kotlin": ["kotlin"],
+        "Swift": ["swift"],
+        "Scala": ["scala"],
+        "SQL": ["sql"],
+        "Bash": ["bash", "shell scripting"],
+        "R": ["r language"]
+      }
+    },
+    "frameworks": {
+      "label": "Frameworks and libraries",
+      "target": 3,
+      "weight": 1.1,
+      "skills": {
+        "Django": ["django"],
+        "Flask": ["flask"],
+        "FastAPI": ["fastapi", "fast api"],
+        "React": ["react", "react.js", "reactjs"],
+        "Vue": ["vue", "vue.js", "vuejs"],
+        "Angular": ["angular"],
+        "Next.js": ["next.js", "nextjs"],
+        "Node.js": ["node.js", "nodejs", "node"],
+        "Express": ["express", "express.js"],
+        "Rails": ["rails", "ruby on rails"],
+        "Spring": ["spring", "spring boot"],
+        "Laravel": ["laravel"],
+        "pandas": ["pandas"],
+        "scikit-learn": ["scikit-learn", "sklearn"],
+        "PyTorch": ["pytorch"],
+        "TensorFlow": ["tensorflow"]
+      }
+    },
+    "data": {
+      "label": "Data stores and pipelines",
+      "target": 2,
+      "weight": 1.0,
+      "skills": {
+        "PostgreSQL": ["postgresql", "postgres"],
+        "MySQL": ["mysql", "mariadb"],
+        "SQLite": ["sqlite"],
+        "MongoDB": ["mongodb", "mongo"],
+        "Redis": ["redis"],
+        "Elasticsearch": ["elasticsearch", "opensearch"],
+        "Kafka": ["kafka"],
+        "RabbitMQ": ["rabbitmq"],
+        "Snowflake": ["snowflake"],
+        "BigQuery": ["bigquery"],
+        "dbt": ["dbt"],
+        "Airflow": ["airflow"],
+        "Spark": ["spark", "pyspark"]
+      }
+    },
+    "cloud_infra": {
+      "label": "Cloud and infrastructure",
+      "target": 3,
+      "weight": 1.2,
+      "skills": {
+        "AWS": ["aws", "amazon web services"],
+        "GCP": ["gcp", "google cloud"],
+        "Azure": ["azure"],
+        "Docker": ["docker"],
+        "Kubernetes": ["kubernetes", "k8s"],
+        "Terraform": ["terraform"],
+        "Ansible": ["ansible"],
+        "CI/CD": ["ci/cd", "continuous integration", "continuous delivery"],
+        "GitHub Actions": ["github actions"],
+        "Jenkins": ["jenkins"],
+        "Linux": ["linux", "unix"],
+        "Prometheus": ["prometheus"],
+        "Grafana": ["grafana"]
+      }
+    },
+    "practices": {
+      "label": "Engineering practices",
+      "target": 3,
+      "weight": 1.0,
+      "skills": {
+        "Agile": ["agile"],
+        "Scrum": ["scrum"],
+        "Kanban": ["kanban"],
+        "TDD": ["tdd", "test-driven development"],
+        "Unit testing": ["unit testing", "unit tests"],
+        "Code review": ["code review", "code reviews"],
+        "Pair programming": ["pair programming"],
+        "Microservices": ["microservices", "microservice"],
+        "REST": ["rest", "restful"],
+        "GraphQL": ["graphql"],
+        "gRPC": ["grpc"],
+        "Event-driven": ["event-driven", "event driven"],
+        "Observability": ["observability", "monitoring"],
+        "Mentoring": ["mentoring", "mentored", "coaching"]
+      }
+    },
+    "tools": {
+      "label": "Tooling",
+      "target": 2,
+      "weight": 0.8,
+      "skills": {
+        "Git": ["git"],
+        "Jira": ["jira"],
+        "Confluence": ["confluence"],
+        "Figma": ["figma"],
+        "Postman": ["postman"],
+        "Tableau": ["tableau"],
+        "Power BI": ["power bi", "powerbi"],
+        "Excel": ["excel"]
+      }
+    }
+  }
+}

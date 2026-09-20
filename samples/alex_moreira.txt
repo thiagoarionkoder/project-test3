@@ -1,0 +1,43 @@
+Alex Moreira
+Sao Paulo, Brazil | alex.moreira@example.com | +55 11 98765-4321
+github.com/alexmoreira | linkedin.com/in/alexmoreira
+
+Summary
+Backend engineer with eight years building and operating Python services for
+high-traffic marketplaces. Comfortable owning a system from design to on-call.
+
+Experience
+
+Senior Software Engineer, Nimbus Labs
+Mar 2021 - Present
+- Led a team of four rebuilding the checkout platform as FastAPI microservices,
+  cutting p95 latency from 820ms to 240ms.
+- Migrated deployments to Docker and Kubernetes on AWS, reducing release time
+  from 45 minutes to 6.
+- Introduced TDD and a code review rota; unit testing coverage rose from 21% to 85%.
+- Mentored two junior engineers through their first production launches.
+
+Software Engineer, Cartola Systems
+Jan 2018 - Feb 2021
+- Built REST and GraphQL APIs in Django backed by PostgreSQL and Redis, serving
+  12k requests per minute at peak.
+- Developed React and TypeScript dashboards used daily by 200 operations staff.
+- Automated the nightly reconciliation job with Airflow, removing 15 hours of
+  manual work each week.
+
+Junior Developer, Praia Digital
+Jun 2016 - Dec 2017
+- Maintained a Rails monolith and a MySQL reporting pipeline.
+- Wrote the first integration test suite for the billing module.
+
+Projects
+- Open-source Terraform modules for Kafka clusters, used by 40+ repositories.
+- Contributor to a small Prometheus exporter for queue depth metrics.
+
+Education
+BSc Computer Science, Universidade de Sao Paulo, 2012 - 2016
+
+Skills
+Python, TypeScript, SQL, Go, Django, FastAPI, React, Docker, Kubernetes, AWS,
+Terraform, PostgreSQL, Redis, Kafka, Airflow, CI/CD, GitHub Actions, Grafana,
+microservices, event-driven architecture, agile, scrum, observability, Git, Jira.

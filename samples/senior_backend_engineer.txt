@@ -1,0 +1,20 @@
+Senior Backend Engineer (Platform)
+
+About the role
+We are looking for a senior backend engineer to join the platform team. You will
+own services that process millions of events per day and mentor engineers across
+two squads.
+
+Requirements
+- 6+ years of professional software engineering experience.
+- Strong Python, with production experience in Django or FastAPI.
+- Deep knowledge of PostgreSQL and query tuning.
+- Experience running services on Kubernetes in AWS.
+- Comfortable with CI/CD pipelines, observability and on-call rotations.
+- Practical experience designing microservices and REST APIs.
+
+Nice to have
+- Go or Rust for performance-sensitive components.
+- Kafka or another event streaming platform.
+- Terraform for infrastructure as code.
+- Experience mentoring junior engineers.
