@@ -1,5 +1,7 @@
 # cv-analyzer
 
+Test-ABCDE
+
 Parses a curriculum vitae, scores it across six weighted dimensions, and matches
 it against a job description. Pure standard library; `pypdf` is optional and
 only needed for PDF input.
@@ -87,3 +89,5 @@ tests/           46 unit tests
 ```bash
 python -m unittest discover -s tests -t .
 ```
+
+<!-- sample 5: thistle -->
