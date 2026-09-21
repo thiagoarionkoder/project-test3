@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -35,6 +36,7 @@ def build_parser() -> argparse.ArgumentParser:
     rank = sub.add_parser("rank", help="score several CVs and list them best first")
     rank.add_argument("cvs", nargs="+", type=Path)
     rank.add_argument("--job", type=Path, help="rank by fit against this job description")
+
 
     sub.add_parser("skills", help="print the skill taxonomy")
     return parser
@@ -73,6 +75,8 @@ def _cmd_rank(args) -> int:
     return 0
 
 
+
+
 def _cmd_skills(_args) -> int:
     taxonomy = default_taxonomy()
     print(f"Taxonomy v{taxonomy.version} -- {len(taxonomy)} skills")
@@ -93,7 +97,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     try:
         return handlers[args.command](args)
-    except (FileNotFoundError, UnsupportedDocument) as exc:
+    except (FileNotFoundError, UnsupportedDocument, RuntimeError) as exc:
         print(f"cv-analyzer: {exc}", file=sys.stderr)
         return 1
 
