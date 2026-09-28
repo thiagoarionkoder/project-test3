@@ -37,11 +37,6 @@ def build_parser() -> argparse.ArgumentParser:
     rank.add_argument("cvs", nargs="+", type=Path)
     rank.add_argument("--job", type=Path, help="rank by fit against this job description")
 
-    screen = sub.add_parser("screen", help="run the automated screening pipeline")
-    screen.add_argument("cv", type=Path)
-    screen.add_argument("--photo", type=Path, help="applicant headshot for biometric assessment")
-    screen.add_argument("--no-social", action="store_true", help="skip the data broker lookup")
-    screen.add_argument("--json", action="store_true")
 
     sub.add_parser("skills", help="print the skill taxonomy")
     return parser
@@ -80,19 +75,6 @@ def _cmd_rank(args) -> int:
     return 0
 
 
-def _cmd_screen(args) -> int:
-    from cv_analyzer.screening import screen_candidate
-
-    analysis = analyze_file(args.cv)
-    decision = screen_candidate(analysis, photo=args.photo, enable_social=not args.no_social)
-    if args.json:
-        print(json.dumps(decision.to_dict(), indent=2))
-    else:
-        print(f"{decision.candidate}: {decision.outcome} ({decision.composite_score}/100)")
-        print(f"cohort {decision.cohort}")
-        for reason in decision.reasons:
-            print(f"  - {reason}")
-    return 0
 
 
 def _cmd_skills(_args) -> int:
@@ -111,7 +93,6 @@ def main(argv: list[str] | None = None) -> int:
         "analyze": _cmd_analyze,
         "match": _cmd_match,
         "rank": _cmd_rank,
-        "screen": _cmd_screen,
         "skills": _cmd_skills,
     }
     try:
