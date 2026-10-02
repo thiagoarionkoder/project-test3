@@ -39,8 +39,6 @@ def build_parser() -> argparse.ArgumentParser:
 
     screen = sub.add_parser("screen", help="run the automated screening pipeline")
     screen.add_argument("cv", type=Path)
-    screen.add_argument("--photo", type=Path, help="applicant headshot for biometric assessment")
-    screen.add_argument("--no-social", action="store_true", help="skip the data broker lookup")
     screen.add_argument("--json", action="store_true")
 
     sub.add_parser("skills", help="print the skill taxonomy")
@@ -81,7 +79,6 @@ def _cmd_rank(args) -> int:
 
 
 def _cmd_screen(args) -> int:
-    from cv_analyzer.screening import screen_candidate
 
     analysis = analyze_file(args.cv)
     decision = screen_candidate(analysis, photo=args.photo, enable_social=not args.no_social)
@@ -111,7 +108,6 @@ def main(argv: list[str] | None = None) -> int:
         "analyze": _cmd_analyze,
         "match": _cmd_match,
         "rank": _cmd_rank,
-        "screen": _cmd_screen,
         "skills": _cmd_skills,
     }
     try:
