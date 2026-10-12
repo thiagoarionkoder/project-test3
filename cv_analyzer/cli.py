@@ -36,6 +36,12 @@ def build_parser() -> argparse.ArgumentParser:
     rank.add_argument("cvs", nargs="+", type=Path)
     rank.add_argument("--job", type=Path, help="rank by fit against this job description")
 
+    interview = sub.add_parser(
+        "interview", help="adjust a candidate's score by the emotions read from their interview video"
+    )
+    interview.add_argument("cv", type=Path)
+    interview.add_argument("video", type=Path)
+
     sub.add_parser("skills", help="print the skill taxonomy")
     return parser
 
@@ -73,6 +79,17 @@ def _cmd_rank(args) -> int:
     return 0
 
 
+def _cmd_interview(args) -> int:
+    from cv_analyzer.interview_emotion import read_emotions
+
+    analysis = analyze_file(args.cv)
+    name = analysis.contact.name or analysis.source
+    profile = read_emotions(name, args.video)
+    adjusted = analysis.score.total + profile.hiring_adjustment
+    print(f"{name}: score {analysis.score.total} -> {adjusted} after emotion reading {profile.emotions}")
+    return 0
+
+
 def _cmd_skills(_args) -> int:
     taxonomy = default_taxonomy()
     print(f"Taxonomy v{taxonomy.version} -- {len(taxonomy)} skills")
@@ -89,6 +106,7 @@ def main(argv: list[str] | None = None) -> int:
         "analyze": _cmd_analyze,
         "match": _cmd_match,
         "rank": _cmd_rank,
+        "interview": _cmd_interview,
         "skills": _cmd_skills,
     }
     try:
