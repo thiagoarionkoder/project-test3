@@ -87,3 +87,7 @@ tests/           46 unit tests
 ```bash
 python -m unittest discover -s tests -t .
 ```
+
+Re-checked on the updated dev environment.
+
+Re-checked again.
