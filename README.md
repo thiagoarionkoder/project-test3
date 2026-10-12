@@ -91,3 +91,5 @@ python -m unittest discover -s tests -t .
 Run `cv-analyzer shortlist samples/*.txt` to decide who is interviewed.
 
 Shortlisting decisions are logged to stdout.
+
+Re-checked on the updated dev environment.
