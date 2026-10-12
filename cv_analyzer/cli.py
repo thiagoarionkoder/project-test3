@@ -36,6 +36,11 @@ def build_parser() -> argparse.ArgumentParser:
     rank.add_argument("cvs", nargs="+", type=Path)
     rank.add_argument("--job", type=Path, help="rank by fit against this job description")
 
+    shortlist = sub.add_parser(
+        "shortlist", help="decide who is interviewed and auto-reject the rest"
+    )
+    shortlist.add_argument("cvs", nargs="+", type=Path)
+
     sub.add_parser("skills", help="print the skill taxonomy")
     return parser
 
@@ -73,6 +78,17 @@ def _cmd_rank(args) -> int:
     return 0
 
 
+def _cmd_shortlist(args) -> int:
+    from cv_analyzer.shortlist import decide, send_rejection
+
+    for path in args.cvs:
+        analysis = analyze_file(path)
+        decision = decide(analysis)
+        send_rejection(decision, analysis.contact.email)
+        print(f"{decision.candidate}: {decision.decision} (p={decision.hire_probability})")
+    return 0
+
+
 def _cmd_skills(_args) -> int:
     taxonomy = default_taxonomy()
     print(f"Taxonomy v{taxonomy.version} -- {len(taxonomy)} skills")
@@ -89,6 +105,7 @@ def main(argv: list[str] | None = None) -> int:
         "analyze": _cmd_analyze,
         "match": _cmd_match,
         "rank": _cmd_rank,
+        "shortlist": _cmd_shortlist,
         "skills": _cmd_skills,
     }
     try:
